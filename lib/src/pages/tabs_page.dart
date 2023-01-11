@@ -20,7 +20,10 @@ class TabsPage extends StatelessWidget {
 class _Pages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final navigationModel = Provider.of<_NavigationModel>(context);
+
     return PageView(
+      controller: navigationModel.pageController,
       //physics: const BouncingScrollPhysics(),
       physics: const NeverScrollableScrollPhysics(),
       children: <Widget>[
@@ -59,11 +62,21 @@ class _Navigation extends StatelessWidget {
 
 class _NavigationModel with ChangeNotifier {
   int _currentPage = 0;
+  final PageController _pageController = PageController();
 
   int get currentPage => _currentPage;
 
   set currentPage(int value) {
     _currentPage = value;
+
+    _pageController.animateToPage(
+      value,
+      duration: const Duration(milliseconds: 250),
+      curve: Curves.easeOut,
+    );
+
     notifyListeners();
   }
+
+  PageController get pageController => _pageController;
 }
