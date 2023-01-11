@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
+import 'package:newsapp/src/pages/pages.dart';
+
 class TabsPage extends StatelessWidget {
   const TabsPage({super.key});
 
@@ -27,9 +29,7 @@ class _Pages extends StatelessWidget {
       //physics: const BouncingScrollPhysics(),
       physics: const NeverScrollableScrollPhysics(),
       children: <Widget>[
-        Container(
-          color: Colors.red,
-        ),
+        const Tab1Page(),
         Container(
           color: Colors.green,
         ),
