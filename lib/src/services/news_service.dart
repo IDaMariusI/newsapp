@@ -6,7 +6,6 @@ import 'package:newsapp/src/models/models.dart';
 
 //final _urlNews = 'https://newsapi.org/v2';
 //final _apiKey = '2674fe016d4140c3acfab0926ffa96b6';
-
 const String _baseUrl = 'newsapi.org';
 const String _apiKey = '2674fe016d4140c3acfab0926ffa96b6';
 const String _country = 'mx';
@@ -34,8 +33,8 @@ class NewsService with ChangeNotifier {
       for (var element in newsResponse.articles!) {
         headlines.add(element!);
       }
-    }
 
-    notifyListeners();
+      notifyListeners();
+    }
   }
 }

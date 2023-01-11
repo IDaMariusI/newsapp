@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
 
-final myTheme = ThemeData.dark().copyWith(
-    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red));
+const Color myColor = Colors.red;
+final ThemeData darkTheme = ThemeData.dark();
+
+final myTheme = darkTheme.copyWith(
+    colorScheme: darkTheme.colorScheme.copyWith(secondary: myColor));
