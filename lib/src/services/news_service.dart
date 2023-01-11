@@ -19,19 +19,22 @@ class NewsService with ChangeNotifier {
   }
 
   getTopHeadlines() async {
+    //final url = Uri.http(_urlNews, '/top-headlines?apiKey=$_apiKey&country=mx');
     var url = Uri.https(_baseUrl, 'v2/top-headlines', {
       'apiKey': _apiKey,
       'country': _country,
     });
 
-    //final url = Uri.http(_urlNews, '/top-headlines?apiKey=$_apiKey&country=mx');
-    //'$_urlNews/top-headlines?apiKey=$_apiKey&country=mx';
-
     final resp = await http.get(url);
 
     final newsResponse = newsReponseFromMap(resp.body);
 
-    this.headlines.addAll(newsResponse.articles);
+    //headlines.addAll(newsResponse.articles);
+    if (newsResponse!.articles!.isNotEmpty) {
+      for (var element in newsResponse.articles!) {
+        headlines.add(element!);
+      }
+    }
 
     notifyListeners();
   }
