@@ -53,7 +53,7 @@ class _Navigation extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.public),
-          label: 'Headers',
+          label: 'Headlines',
         ),
       ],
     );
@@ -80,3 +80,4 @@ class _NavigationModel with ChangeNotifier {
 
   PageController get pageController => _pageController;
 }
+//2674fe016d4140c3acfab0926ffa96b6
