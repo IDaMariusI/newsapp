@@ -32,6 +32,10 @@ class _New extends StatelessWidget {
         _TarjetaTopBar(noticia, index),
         _TarjetaTitulo(noticia),
         _TarjetaImagen(noticia),
+        _TarjetaBody(noticia),
+        _TarjetaButtons(noticia),
+        const SizedBox(height: 10),
+        const Divider(),
       ],
     );
   }
@@ -86,7 +90,67 @@ class _TarjetaImagen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: const Text('Hola Mundo'),
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(50),
+          bottomRight: Radius.circular(50),
+        ),
+        child: Container(
+          child: (noticia.urlToImage != null)
+              ? FadeInImage(
+                  placeholder: const AssetImage('assets/giphy.gif'),
+                  image: NetworkImage(noticia.urlToImage!),
+                )
+              : const Image(image: AssetImage('assets/no-image.png')),
+        ),
+      ),
+    );
+  }
+}
+
+class _TarjetaBody extends StatelessWidget {
+  const _TarjetaBody(this.noticia);
+
+  final Article noticia;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Text(noticia.description ?? ''),
+    );
+  }
+}
+
+class _TarjetaButtons extends StatelessWidget {
+  const _TarjetaButtons(this.noticia);
+
+  final Article noticia;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        RawMaterialButton(
+          onPressed: () {},
+          fillColor: myTheme.colorScheme.secondary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: const Icon(Icons.star_border),
+        ),
+        const SizedBox(width: 20),
+        RawMaterialButton(
+          onPressed: () {},
+          fillColor: Colors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: const Icon(Icons.more),
+        ),
+      ],
     );
   }
 }
