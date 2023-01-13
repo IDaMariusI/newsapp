@@ -29,11 +29,11 @@ class _New extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        _TarjetaTopBar(noticia, index),
-        _TarjetaTitulo(noticia),
-        _TarjetaImagen(noticia),
-        _TarjetaBody(noticia),
-        _TarjetaButtons(noticia),
+        _CardTopBar(noticia, index),
+        _CardTitle(noticia),
+        _CardImage(noticia),
+        _CardBody(noticia),
+        _CardButtons(),
         const SizedBox(height: 10),
         const Divider(),
       ],
@@ -41,8 +41,8 @@ class _New extends StatelessWidget {
   }
 }
 
-class _TarjetaTopBar extends StatelessWidget {
-  const _TarjetaTopBar(this.noticia, this.index);
+class _CardTopBar extends StatelessWidget {
+  const _CardTopBar(this.noticia, this.index);
 
   final Article noticia;
   final int index;
@@ -65,8 +65,8 @@ class _TarjetaTopBar extends StatelessWidget {
   }
 }
 
-class _TarjetaTitulo extends StatelessWidget {
-  const _TarjetaTitulo(this.noticia);
+class _CardTitle extends StatelessWidget {
+  const _CardTitle(this.noticia);
 
   final Article noticia;
 
@@ -82,8 +82,8 @@ class _TarjetaTitulo extends StatelessWidget {
   }
 }
 
-class _TarjetaImagen extends StatelessWidget {
-  const _TarjetaImagen(this.noticia);
+class _CardImage extends StatelessWidget {
+  const _CardImage(this.noticia);
 
   final Article noticia;
 
@@ -109,8 +109,8 @@ class _TarjetaImagen extends StatelessWidget {
   }
 }
 
-class _TarjetaBody extends StatelessWidget {
-  const _TarjetaBody(this.noticia);
+class _CardBody extends StatelessWidget {
+  const _CardBody(this.noticia);
 
   final Article noticia;
 
@@ -123,11 +123,7 @@ class _TarjetaBody extends StatelessWidget {
   }
 }
 
-class _TarjetaButtons extends StatelessWidget {
-  const _TarjetaButtons(this.noticia);
-
-  final Article noticia;
-
+class _CardButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -141,7 +137,7 @@ class _TarjetaButtons extends StatelessWidget {
           ),
           child: const Icon(Icons.star_border),
         ),
-        const SizedBox(width: 20),
+        const SizedBox(width: 10),
         RawMaterialButton(
           onPressed: () {},
           fillColor: Colors.blue,

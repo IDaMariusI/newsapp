@@ -26,13 +26,10 @@ class _Pages extends StatelessWidget {
 
     return PageView(
       controller: navigationModel.pageController,
-      //physics: const BouncingScrollPhysics(),
       physics: const NeverScrollableScrollPhysics(),
-      children: <Widget>[
-        const Tab1Page(),
-        Container(
-          color: Colors.green,
-        ),
+      children: const <Widget>[
+        Tab1Page(),
+        Tab2Page(),
       ],
     );
   }
@@ -80,4 +77,3 @@ class _NavigationModel with ChangeNotifier {
 
   PageController get pageController => _pageController;
 }
-//2674fe016d4140c3acfab0926ffa96b6
