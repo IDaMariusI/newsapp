@@ -59,6 +59,7 @@ class _Navigation extends StatelessWidget {
 
 class _NavigationModel with ChangeNotifier {
   int _currentPage = 0;
+
   final PageController _pageController = PageController();
 
   int get currentPage => _currentPage;

@@ -4,9 +4,9 @@ import 'package:newsapp/src/models/models.dart';
 import 'package:newsapp/src/theme/tema.dart';
 
 class NewsList extends StatelessWidget {
-  const NewsList(this.news, {super.key});
-
   final List<Article> news;
+
+  const NewsList(this.news, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,10 @@ class NewsList extends StatelessWidget {
 }
 
 class _New extends StatelessWidget {
-  const _New({required this.noticia, required this.index});
-
   final Article noticia;
   final int index;
+
+  const _New({required this.noticia, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +42,10 @@ class _New extends StatelessWidget {
 }
 
 class _CardTopBar extends StatelessWidget {
-  const _CardTopBar(this.noticia, this.index);
-
   final Article noticia;
   final int index;
+
+  const _CardTopBar(this.noticia, this.index);
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +66,9 @@ class _CardTopBar extends StatelessWidget {
 }
 
 class _CardTitle extends StatelessWidget {
-  const _CardTitle(this.noticia);
-
   final Article noticia;
+
+  const _CardTitle(this.noticia);
 
   @override
   Widget build(BuildContext context) {
@@ -83,9 +83,9 @@ class _CardTitle extends StatelessWidget {
 }
 
 class _CardImage extends StatelessWidget {
-  const _CardImage(this.noticia);
-
   final Article noticia;
+
+  const _CardImage(this.noticia);
 
   @override
   Widget build(BuildContext context) {
@@ -110,9 +110,9 @@ class _CardImage extends StatelessWidget {
 }
 
 class _CardBody extends StatelessWidget {
-  const _CardBody(this.noticia);
-
   final Article noticia;
+
+  const _CardBody(this.noticia);
 
   @override
   Widget build(BuildContext context) {

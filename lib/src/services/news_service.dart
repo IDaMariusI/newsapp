@@ -42,6 +42,9 @@ class NewsService with ChangeNotifier {
     notifyListeners();
   }
 
+  List<Article>? get getArticlesSelectedCategory =>
+      categoryArticles[selectedCategory];
+
   getTopHeadlines() async {
     var url = Uri.https(_baseUrl, 'v2/top-headlines', {
       'apiKey': _apiKey,
