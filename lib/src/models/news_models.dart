@@ -4,13 +4,13 @@
 
 import 'dart:convert';
 
-NewsReponse? newsReponseFromMap(String str) =>
-    NewsReponse.fromMap(json.decode(str));
+NewsResponse? newsReponseFromMap(String str) =>
+    NewsResponse.fromMap(json.decode(str));
 
-String newsReponseToMap(NewsReponse? data) => json.encode(data!.toMap());
+String newsReponseToMap(NewsResponse? data) => json.encode(data!.toMap());
 
-class NewsReponse {
-  NewsReponse({
+class NewsResponse {
+  NewsResponse({
     this.status,
     this.totalResults,
     this.articles,
@@ -20,7 +20,7 @@ class NewsReponse {
   int? totalResults;
   List<Article?>? articles;
 
-  factory NewsReponse.fromMap(Map<String, dynamic> json) => NewsReponse(
+  factory NewsResponse.fromMap(Map<String, dynamic> json) => NewsResponse(
         status: json["status"],
         totalResults: json["totalResults"],
         articles: json["articles"] == null
